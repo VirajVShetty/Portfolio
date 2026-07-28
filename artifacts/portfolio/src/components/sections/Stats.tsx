@@ -6,7 +6,7 @@ export default function Stats() {
     { value: "$1M", label: "Projected delinquent loans prevented" },
     { value: "95%", label: "Execution time reduction (PSI/AUC pipeline)" },
     { value: "85%", label: "Manual investigation time cut" },
-    { value: "10+", label: "Active models governed" },
+    { value: "12", label: "Active models governed" },
     { value: "0.709", label: "Best AUC on 2.3M+ loan dataset" },
   ];
 

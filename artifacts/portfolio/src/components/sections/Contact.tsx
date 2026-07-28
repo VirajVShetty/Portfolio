@@ -53,8 +53,8 @@ export default function Contact() {
             <span>© 2026 Viraj Shetty · Dallas, TX</span>
             <div className="flex items-center gap-6">
               <a href="mailto:virajvshetty47@gmail.com" className="hover:text-foreground transition-colors">Email</a>
-              <a href="https://linkedin.com/in/virajvshetty" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">LinkedIn</a>
-              <a href="https://github.com/virajvshetty" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 hover:text-foreground transition-colors">
+              <a href="https://www.linkedin.com/in/virajshetty47/" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">LinkedIn</a>
+              <a href="https://github.com/virajVshetty" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 hover:text-foreground transition-colors">
                 <Github className="w-3.5 h-3.5" />
                 GitHub
               </a>

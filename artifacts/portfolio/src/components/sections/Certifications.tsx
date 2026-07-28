@@ -5,7 +5,7 @@ const certs = [
     name: "Databricks Fundamentals",
     issuer: "Databricks",
     date: "Accredited 2026",
-    verifyUrl: "#",
+    verifyUrl: "https://credentials.databricks.com/bce813e0-1310-4656-8576-08bbfb48b354#acc.xHuna90z",
     // TODO: Replace with real badge image:
     // import badgeImg from "@assets/databricks-fundamentals-badge.png"
     // then use: <img src={badgeImg} alt="Databricks Fundamentals" className="w-full h-full object-cover" />
@@ -15,7 +15,7 @@ const certs = [
     name: "Databricks Generative AI Fundamentals",
     issuer: "Databricks",
     date: "Accredited 2026",
-    verifyUrl: "#",
+    verifyUrl: "https://credentials.databricks.com/bce813e0-1310-4656-8576-08bbfb48b354#acc.juzPptcw",
     // TODO: Replace with real badge image:
     // import badgeImg from "@assets/databricks-genai-badge.png"
     icon: "✦",

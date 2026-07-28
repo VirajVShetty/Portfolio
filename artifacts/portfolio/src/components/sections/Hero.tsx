@@ -2,9 +2,10 @@ import { motion } from "framer-motion";
 
 const chips = [
   "Model Risk Management",
+  "Data Scientist",
+  "Credit Risk Analyst",
   "XGBoost",
-  "SR 26-2 / OCC 11-12",
-  "Credit Risk",
+  "SR 26-2 / OCC 11-12"
 ];
 
 export default function Hero() {
@@ -63,7 +64,7 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.3 }}
         >
           <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed">
-            Data Scientist II at Elevate Credit, working in Model Risk Management — governing, monitoring, and validating the models that decide who gets credit.
+            Data Scientist II at Elevate Credit, working in Model Risk Management. Governing, monitoring, and validating models in production.
           </p>
         </motion.div>
 
