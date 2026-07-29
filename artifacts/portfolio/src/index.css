@@ -50,28 +50,28 @@
 }
 
 :root {
-  --background: 240 5% 4%;
-  --foreground: 240 5% 96%;
-  --border: 240 4% 16%;
-  --input: 240 4% 16%;
+  --background: 240 20% 99%;
+  --foreground: 240 10% 12%;
+  --border: 240 6% 90%;
+  --input: 240 6% 90%;
   --ring: 243 75% 59%;
 
-  --card: 240 5% 7%;
-  --card-foreground: 240 5% 96%;
-  --card-border: 240 4% 16%;
+  --card: 0 0% 100%;
+  --card-foreground: 240 10% 12%;
+  --card-border: 240 6% 90%;
 
-  --popover: 240 5% 7%;
-  --popover-foreground: 240 5% 96%;
-  --popover-border: 240 4% 16%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 240 10% 12%;
+  --popover-border: 240 6% 90%;
 
   --primary: 243 75% 59%;
   --primary-foreground: 210 40% 98%;
 
-  --secondary: 240 4% 16%;
-  --secondary-foreground: 240 5% 96%;
+  --secondary: 240 6% 94%;
+  --secondary-foreground: 240 10% 12%;
 
-  --muted: 240 4% 16%;
-  --muted-foreground: 240 5% 65%;
+  --muted: 240 6% 94%;
+  --muted-foreground: 240 4% 40%;
 
   --accent: 243 75% 59%;
   --accent-foreground: 210 40% 98%;
