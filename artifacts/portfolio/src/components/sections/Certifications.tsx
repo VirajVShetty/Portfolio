@@ -4,8 +4,8 @@ import { motion } from "framer-motion";
 // with platform: "accredible" to have it show "Verify on Credential.net →"
 // instead of Credly — no other changes needed.
 const platforms = {
-  credly: { label: "Credly", profileUrl: "#" },
-  accredible: { label: "Credential.net", profileUrl: "#" },
+  credly: { label: "Credly", profileUrl: "https://www.credly.com/users/viraj-shetty.d917c426/badges/credly" },
+  accredible: { label: "Credential.net", profileUrl: "https://www.credential.net/profile/virajshetty655837/wallet" },
 } as const;
 
 type Platform = keyof typeof platforms;

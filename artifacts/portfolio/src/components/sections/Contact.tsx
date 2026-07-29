@@ -39,7 +39,7 @@ export default function Contact() {
               Email me →
             </a>
             <a
-              href="https://linkedin.com/in/virajvshetty"
+              href="https://www.linkedin.com/in/virajshetty47"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-3 px-6 py-3 bg-card border border-border rounded-full hover:border-primary/50 transition-all group"
