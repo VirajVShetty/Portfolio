@@ -1,3 +1,6 @@
+import { useEffect, useState } from "react";
+import { useTheme } from "next-themes";
+import { FileText, Moon, Sun } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const links = [
@@ -9,11 +12,20 @@ const links = [
 ];
 
 function Navbar({ activeSection }: { activeSection: string }) {
+  const { theme, setTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   const handleScroll = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
     const el = document.querySelector(href);
     if (el) el.scrollIntoView({ behavior: "smooth" });
   };
+
+  const isDark = !mounted || theme === "dark";
 
   return (
     <nav className="fixed top-5 left-1/2 -translate-x-1/2 z-50 w-[min(92vw,780px)]">
@@ -44,7 +56,7 @@ function Navbar({ activeSection }: { activeSection: string }) {
                   "px-3 py-1.5 rounded-full transition-all duration-200 whitespace-nowrap",
                   activeSection === link.sec
                     ? "bg-gradient-to-r from-indigo-500/20 to-violet-500/20 text-primary border border-primary/30"
-                    : "text-muted-foreground hover:text-foreground hover:bg-white/5"
+                    : "text-muted-foreground hover:text-foreground hover:bg-foreground/5"
                 )}
               >
                 {link.name}
@@ -53,13 +65,35 @@ function Navbar({ activeSection }: { activeSection: string }) {
           ))}
         </ul>
 
-        {/* CTA */}
-        <a
-          href="mailto:virajvshetty47@gmail.com"
-          className="flex-shrink-0 bg-foreground text-background text-[13px] font-medium px-4 py-2 rounded-full transition-transform hover:scale-105 active:scale-95 whitespace-nowrap"
-        >
-          Contact →
-        </a>
+        {/* Actions */}
+        <div className="flex items-center gap-1.5 flex-shrink-0">
+          <a
+            href="/resume.pdf"
+            download
+            aria-label="Download resume"
+            title="Download resume"
+            className="w-8 h-8 flex items-center justify-center rounded-full text-muted-foreground hover:text-foreground hover:bg-foreground/5 transition-colors"
+          >
+            <FileText className="w-4 h-4" />
+          </a>
+
+          <button
+            type="button"
+            onClick={() => setTheme(isDark ? "light" : "dark")}
+            aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
+            title={isDark ? "Switch to light mode" : "Switch to dark mode"}
+            className="w-8 h-8 flex items-center justify-center rounded-full text-muted-foreground hover:text-foreground hover:bg-foreground/5 transition-colors"
+          >
+            {isDark ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
+          </button>
+
+          <a
+            href="mailto:virajvshetty47@gmail.com"
+            className="bg-foreground text-background text-[13px] font-medium px-4 py-2 rounded-full transition-transform hover:scale-105 active:scale-95 whitespace-nowrap"
+          >
+            Contact →
+          </a>
+        </div>
       </div>
     </nav>
   );
