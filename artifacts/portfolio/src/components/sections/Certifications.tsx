@@ -22,12 +22,8 @@ const certs: {
     name: "Databricks Fundamentals",
     issuer: "Databricks",
     date: "Accredited 2026",
-<<<<<<< HEAD
     verifyUrl: "https://credentials.databricks.com/bce813e0-1310-4656-8576-08bbfb48b354#acc.xHuna90z",
-=======
-    verifyUrl: "#",
     platform: "credly",
->>>>>>> 620147212d6169a6770f41b1108227a137f5c6f5
     // TODO: Replace with real badge image:
     // import badgeImg from "@assets/databricks-fundamentals-badge.png"
     // then use: <img src={badgeImg} alt="Databricks Fundamentals" className="w-full h-full object-cover" />
@@ -37,12 +33,8 @@ const certs: {
     name: "Databricks Generative AI Fundamentals",
     issuer: "Databricks",
     date: "Accredited 2026",
-<<<<<<< HEAD
     verifyUrl: "https://credentials.databricks.com/bce813e0-1310-4656-8576-08bbfb48b354#acc.juzPptcw",
-=======
-    verifyUrl: "#",
     platform: "credly",
->>>>>>> 620147212d6169a6770f41b1108227a137f5c6f5
     // TODO: Replace with real badge image:
     // import badgeImg from "@assets/databricks-genai-badge.png"
     icon: "✦",

@@ -5,7 +5,7 @@ const chips = [
   "Data Scientist",
   "Credit Risk Analyst",
   "XGBoost",
-  "SR 26-2 / OCC 11-12"
+  "SR 26-2 / OCC 11-12",
 ];
 
 export default function Hero() {
