@@ -13,7 +13,7 @@ export default function Hero() {
     <section id="about" className="relative min-h-screen flex items-center justify-center overflow-hidden section-anchor">
       {/* Oversized background letterforms */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden">
-        <span className="font-display font-bold leading-none whitespace-nowrap text-white select-none"
+        <span className="font-display font-bold leading-none whitespace-nowrap text-foreground select-none"
           style={{ fontSize: "clamp(90px, 22vw, 280px)", opacity: 0.04 }}>
           SHETTY
         </span>

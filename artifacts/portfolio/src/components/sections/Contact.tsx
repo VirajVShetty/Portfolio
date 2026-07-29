@@ -6,7 +6,7 @@ export default function Contact() {
     <footer id="contact" className="relative pt-32 pb-12 px-6 overflow-hidden section-anchor border-t border-border/40">
       {/* "CONNECT" background word */}
       <div
-        className="absolute bottom-[-2%] left-1/2 -translate-x-1/2 font-display font-bold whitespace-nowrap pointer-events-none select-none text-white"
+        className="absolute bottom-[-2%] left-1/2 -translate-x-1/2 font-display font-bold whitespace-nowrap pointer-events-none select-none text-foreground"
         style={{ fontSize: "clamp(70px, 15vw, 180px)", opacity: 0.04 }}
       >
         CONNECT

@@ -1,11 +1,33 @@
 import { motion } from "framer-motion";
 
-const certs = [
+// Verification platforms this section knows how to label/link. Add a cert
+// with platform: "accredible" to have it show "Verify on Credential.net →"
+// instead of Credly — no other changes needed.
+const platforms = {
+  credly: { label: "Credly", profileUrl: "#" },
+  accredible: { label: "Credential.net", profileUrl: "#" },
+} as const;
+
+type Platform = keyof typeof platforms;
+
+const certs: {
+  name: string;
+  issuer: string;
+  date: string;
+  verifyUrl: string;
+  platform: Platform;
+  icon: string;
+}[] = [
   {
     name: "Databricks Fundamentals",
     issuer: "Databricks",
     date: "Accredited 2026",
+<<<<<<< HEAD
     verifyUrl: "https://credentials.databricks.com/bce813e0-1310-4656-8576-08bbfb48b354#acc.xHuna90z",
+=======
+    verifyUrl: "#",
+    platform: "credly",
+>>>>>>> 620147212d6169a6770f41b1108227a137f5c6f5
     // TODO: Replace with real badge image:
     // import badgeImg from "@assets/databricks-fundamentals-badge.png"
     // then use: <img src={badgeImg} alt="Databricks Fundamentals" className="w-full h-full object-cover" />
@@ -15,7 +37,12 @@ const certs = [
     name: "Databricks Generative AI Fundamentals",
     issuer: "Databricks",
     date: "Accredited 2026",
+<<<<<<< HEAD
     verifyUrl: "https://credentials.databricks.com/bce813e0-1310-4656-8576-08bbfb48b354#acc.juzPptcw",
+=======
+    verifyUrl: "#",
+    platform: "credly",
+>>>>>>> 620147212d6169a6770f41b1108227a137f5c6f5
     // TODO: Replace with real badge image:
     // import badgeImg from "@assets/databricks-genai-badge.png"
     icon: "✦",
@@ -68,7 +95,7 @@ export default function Certifications() {
               href={cert.verifyUrl}
               className="text-xs font-medium text-foreground border-b border-foreground/40 pb-px hover:opacity-60 transition-opacity"
             >
-              Verify on Credly →
+              Verify on {platforms[cert.platform].label} →
             </a>
           </motion.div>
         ))}
@@ -82,13 +109,18 @@ export default function Certifications() {
           className="flex flex-col items-center justify-center bg-card border border-card-border rounded-2xl p-8 text-center hover:-translate-y-1.5 hover:border-primary/40 hover:shadow-[0_24px_50px_-20px_rgba(79,70,229,0.2)] transition-all duration-300"
         >
           <h3 className="text-base font-semibold text-foreground mb-2">More on the way</h3>
-          <p className="text-sm text-muted-foreground mb-5">Currently building out additional certifications and Credly badges.</p>
-          <a
-            href="#"
-            className="text-xs font-medium text-foreground border border-foreground/20 px-4 py-2 rounded-full hover:bg-foreground/10 transition-colors"
-          >
-            View Credly profile →
-          </a>
+          <p className="text-sm text-muted-foreground mb-5">Currently building out additional certifications and badges.</p>
+          <div className="flex flex-wrap items-center justify-center gap-2">
+            {(Object.keys(platforms) as Platform[]).map((key) => (
+              <a
+                key={key}
+                href={platforms[key].profileUrl}
+                className="text-xs font-medium text-foreground border border-foreground/20 px-4 py-2 rounded-full hover:bg-foreground/10 transition-colors"
+              >
+                {platforms[key].label} profile →
+              </a>
+            ))}
+          </div>
         </motion.div>
       </div>
     </section>
