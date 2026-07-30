@@ -10,14 +10,12 @@ import {
 } from "react-icons/si";
 import { FaXTwitter } from "react-icons/fa6";
 import { BadgeCheck } from "lucide-react";
- 
 
 const chips = [
   "Model Risk Management",
-  "Data Scientist",
-  "Credit Risk Analyst",
   "XGBoost",
   "SR 26-2 / OCC 11-12",
+  "Credit Risk",
 ];
 
 const socials = [
@@ -27,9 +25,9 @@ const socials = [
   { name: "CodeChef", href: "https://www.codechef.com/users/viraj713", icon: SiCodechef },
   { name: "Tableau Public", href: "https://public.tableau.com/profile/viraj2833#!/", icon: SiTableau },
   { name: "Kaggle", href: "https://www.kaggle.com/virajvshetty", icon: SiKaggle },
-  { name: "Twitter / X", href: "https://x.com/virajcodes", icon: FaXTwitter },
+  { name: "Twitter / X", href: "https://x.com/vshetty47", icon: FaXTwitter },
   // TODO: swap "#" for your real Credly profile URL
-  { name: "Credly", href: "https://www.credly.com/users/viraj-shetty.d917c426/badges/credly", icon: SiCredly },
+  { name: "Credly", href: "https://www.credly.com/users/viraj-shetty.d917c426/edit/badges/credly", icon: SiCredly },
   // TODO: swap "#" for your real Credential.net / Accredible profile URL
   // (no dedicated brand icon exists in Simple Icons for this one, using a generic badge icon instead)
   { name: "Credential.net", href: "https://www.credential.net/profile/virajshetty655837/wallet", icon: BadgeCheck },
@@ -91,7 +89,7 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.3 }}
         >
           <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed">
-            Data Scientist II at Elevate Credit, working in Model Risk Management. Governing, monitoring, and validating models in production.
+            Data Scientist II at Elevate Credit, working in Model Risk Management — governing, monitoring, and validating the models that decide who gets credit.
           </p>
         </motion.div>
 
@@ -99,7 +97,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.5 }}
-          className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16"
+          className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-10"
         >
           <a
             href="#experience"
@@ -114,8 +112,8 @@ export default function Hero() {
             See featured project
           </a>
         </motion.div>
-          
-                {/* Social links */}
+
+        {/* Social links */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -123,7 +121,7 @@ export default function Hero() {
           className="flex flex-wrap items-center justify-center gap-2.5 mb-16"
         >
           {socials.map((social) => (
-            
+            <a
               key={social.name}
               href={social.href}
               target="_blank"
