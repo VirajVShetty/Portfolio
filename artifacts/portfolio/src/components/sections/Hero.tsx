@@ -3,12 +3,11 @@ import {
   SiGithub,
   SiHackerrank,
   SiCodechef,
-  SiTableau,
   SiKaggle,
   SiCredly,
 } from "react-icons/si";
 import { FaXTwitter, FaLinkedin } from "react-icons/fa6";
-import { BadgeCheck } from "lucide-react";
+import { BadgeCheck, BarChart3 } from "lucide-react";
 
 const chips = [
   "Model Risk Management",
@@ -22,7 +21,10 @@ const socials = [
   { name: "GitHub", href: "https://github.com/VirajVShetty", icon: SiGithub },
   { name: "HackerRank", href: "https://www.hackerrank.com/viraj_shetty", icon: SiHackerrank },
   { name: "CodeChef", href: "https://www.codechef.com/users/viraj713", icon: SiCodechef },
-  { name: "Tableau Public", href: "https://public.tableau.com/profile/viraj2833#!/", icon: SiTableau },
+  // No Tableau brand icon currently exists in Simple Icons (SiTableau isn't
+  // exported by the installed react-icons version) — using a generic chart
+  // icon as a stand-in.
+  { name: "Tableau Public", href: "https://public.tableau.com/profile/viraj2833#!/", icon: BarChart3 },
   { name: "Kaggle", href: "https://www.kaggle.com/virajvshetty", icon: SiKaggle },
   { name: "Twitter / X", href: "https://x.com/vshetty47", icon: FaXTwitter },
   // TODO: swap "#" for your real Credly profile URL
