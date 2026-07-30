@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import {
-  SiLinkedin,
   SiGithub,
   SiHackerrank,
   SiCodechef,
@@ -8,7 +7,7 @@ import {
   SiKaggle,
   SiCredly,
 } from "react-icons/si";
-import { FaXTwitter } from "react-icons/fa6";
+import { FaXTwitter, FaLinkedin } from "react-icons/fa6";
 import { BadgeCheck } from "lucide-react";
 
 const chips = [
@@ -19,7 +18,7 @@ const chips = [
 ];
 
 const socials = [
-  { name: "LinkedIn", href: "https://www.linkedin.com/in/virajshetty47/", icon: SiLinkedin },
+  { name: "LinkedIn", href: "https://www.linkedin.com/in/virajshetty47/", icon: FaLinkedin },
   { name: "GitHub", href: "https://github.com/VirajVShetty", icon: SiGithub },
   { name: "HackerRank", href: "https://www.hackerrank.com/viraj_shetty", icon: SiHackerrank },
   { name: "CodeChef", href: "https://www.codechef.com/users/viraj713", icon: SiCodechef },
