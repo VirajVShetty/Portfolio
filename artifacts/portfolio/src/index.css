@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Syne:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap');
 @import 'tailwindcss';
 @import 'tw-animate-css';
 @plugin "@tailwindcss/typography";
@@ -79,8 +79,8 @@
   --destructive: 0 84% 60%;
   --destructive-foreground: 210 40% 98%;
 
-  --app-font-sans: 'Inter', sans-serif;
-  --app-font-display: 'Syne', sans-serif;
+  --app-font-sans: 'Hanken Grotesk', sans-serif;
+  --app-font-display: 'Hanken Grotesk', sans-serif;
   --radius: 0.5rem;
 }
 

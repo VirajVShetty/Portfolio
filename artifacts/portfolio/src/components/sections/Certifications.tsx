@@ -1,4 +1,14 @@
 import { motion } from "framer-motion";
+import { X } from "lucide-react";
+import {
+  Dialog,
+  DialogClose,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogDescription,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 
 // Verification platforms this section knows how to label/link. Add a cert
 // with platform: "accredible" to have it show "Verify on Credential.net →"
@@ -10,34 +20,57 @@ const platforms = {
 
 type Platform = keyof typeof platforms;
 
-const certs: {
+type Cert = {
   name: string;
-  issuer: string;
   date: string;
   verifyUrl: string;
   platform: Platform;
   icon: string;
-}[] = [
+};
+
+// Certifications grouped by issuer. Each issuer renders as one card; clicking
+// it opens a window listing every credential under that issuer, each linking
+// straight to its verification page.
+const issuers: { name: string; icon: string; certs: Cert[] }[] = [
   {
-    name: "Databricks Fundamentals",
-    issuer: "Databricks",
-    date: "Accredited 2026",
-    verifyUrl: "https://credentials.databricks.com/bce813e0-1310-4656-8576-08bbfb48b354#acc.xHuna90z",
-    platform: "credly",
-    // TODO: Replace with real badge image:
-    // import badgeImg from "@assets/databricks-fundamentals-badge.png"
-    // then use: <img src={badgeImg} alt="Databricks Fundamentals" className="w-full h-full object-cover" />
+    name: "Databricks",
     icon: "◆",
+    certs: [
+      {
+        name: "Databricks Fundamentals",
+        date: "Accredited 2026",
+        verifyUrl: "https://credentials.databricks.com/bce813e0-1310-4656-8576-08bbfb48b354#acc.xHuna90z",
+        platform: "credly",
+        // TODO: Replace with real badge image:
+        // import badgeImg from "@assets/databricks-fundamentals-badge.png"
+        // then use: <img src={badgeImg} alt="Databricks Fundamentals" className="w-full h-full object-cover" />
+        icon: "◆",
+      },
+      {
+        name: "Databricks Generative AI Fundamentals",
+        date: "Accredited 2026",
+        verifyUrl: "https://credentials.databricks.com/bce813e0-1310-4656-8576-08bbfb48b354#acc.juzPptcw",
+        platform: "credly",
+        // TODO: Replace with real badge image:
+        // import badgeImg from "@assets/databricks-genai-badge.png"
+        icon: "✦",
+      },
+    ],
   },
   {
-    name: "Databricks Generative AI Fundamentals",
-    issuer: "Databricks",
-    date: "Accredited 2026",
-    verifyUrl: "https://credentials.databricks.com/bce813e0-1310-4656-8576-08bbfb48b354#acc.juzPptcw",
-    platform: "credly",
-    // TODO: Replace with real badge image:
-    // import badgeImg from "@assets/databricks-genai-badge.png"
-    icon: "✦",
+    name: "Snowflake",
+    icon: "❄",
+    certs: [
+      // TODO: replace with your real Snowflake certification name, date, and
+      // verify URL (and badge image, same as the Databricks ones above).
+      {
+        name: "Snowflake Certification",
+        date: "TBD",
+        verifyUrl: "#",
+        platform: "credly",
+        icon: "❄",
+      },
+    ],
   },
 ];
 
@@ -59,37 +92,85 @@ export default function Certifications() {
       </motion.div>
 
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
-        {certs.map((cert, idx) => (
-          <motion.div
-            key={idx}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-50px" }}
-            transition={{ duration: 0.5, delay: idx * 0.1 }}
-            className="group flex flex-col items-center bg-card border border-card-border rounded-2xl p-8 text-center hover:-translate-y-1.5 hover:border-primary/40 hover:shadow-[0_24px_50px_-20px_rgba(79,70,229,0.2)] transition-all duration-300"
-          >
-            {/* Badge ring — TODO: swap fallback-icon for <img> once you have the badge file */}
-            <div
-              className="w-24 h-24 rounded-full mb-5 p-[3px] flex items-center justify-center"
-              style={{ background: "conic-gradient(#4f46e5, #7c3aed, #4f46e5)" }}
-            >
-              <div className="w-full h-full rounded-full bg-card flex items-center justify-center overflow-hidden">
-                {/* TODO: Replace the span below with your badge image:
-                    <img src={badgeImg} alt={cert.name} className="w-full h-full object-cover" /> */}
-                <span className="text-3xl">{cert.icon}</span>
-              </div>
-            </div>
+        {issuers.map((issuer, idx) => (
+          <Dialog key={issuer.name}>
+            <DialogTrigger asChild>
+              <motion.button
+                type="button"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.5, delay: idx * 0.1 }}
+                className="group flex flex-col items-center bg-card border border-card-border rounded-2xl p-8 text-center hover:-translate-y-1.5 hover:border-primary/40 hover:shadow-[0_24px_50px_-20px_rgba(79,70,229,0.2)] transition-all duration-300 cursor-pointer"
+              >
+                {/* Badge ring — TODO: swap fallback-icon for <img> once you have the badge file */}
+                <div
+                  className="w-24 h-24 rounded-full mb-5 p-[3px] flex items-center justify-center"
+                  style={{ background: "conic-gradient(#4f46e5, #7c3aed, #4f46e5)" }}
+                >
+                  <div className="w-full h-full rounded-full bg-card flex items-center justify-center overflow-hidden">
+                    <span className="text-3xl">{issuer.icon}</span>
+                  </div>
+                </div>
 
-            <h3 className="text-base font-semibold text-foreground mb-1">{cert.name}</h3>
-            <p className="text-sm text-muted-foreground mb-1">{cert.issuer}</p>
-            <p className="font-mono text-xs text-muted-foreground/60 mb-5">{cert.date}</p>
-            <a
-              href={cert.verifyUrl}
-              className="text-xs font-medium text-foreground border-b border-foreground/40 pb-px hover:opacity-60 transition-opacity"
-            >
-              Verify on {platforms[cert.platform].label} →
-            </a>
-          </motion.div>
+                <h3 className="text-base font-semibold text-foreground mb-1">{issuer.name}</h3>
+                <p className="text-sm text-muted-foreground mb-5">
+                  {issuer.certs.length} {issuer.certs.length === 1 ? "credential" : "credentials"}
+                </p>
+                <span className="text-xs font-medium text-foreground border-b border-foreground/40 pb-px group-hover:opacity-60 transition-opacity">
+                  View badges →
+                </span>
+              </motion.button>
+            </DialogTrigger>
+
+            <DialogContent>
+              <DialogHeader>
+                <DialogTitle>{issuer.name}</DialogTitle>
+                <DialogDescription>
+                  Click a badge to verify the credential.
+                </DialogDescription>
+              </DialogHeader>
+
+              <div className="flex flex-col gap-3">
+                {issuer.certs.map((cert) => (
+                  <a
+                    key={cert.name}
+                    href={cert.verifyUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-4 bg-card border border-card-border rounded-xl p-4 hover:border-primary/40 hover:bg-foreground/5 transition-colors"
+                  >
+                    <div
+                      className="w-14 h-14 flex-shrink-0 rounded-full p-[2px] flex items-center justify-center"
+                      style={{ background: "conic-gradient(#4f46e5, #7c3aed, #4f46e5)" }}
+                    >
+                      <div className="w-full h-full rounded-full bg-card flex items-center justify-center overflow-hidden">
+                        <span className="text-xl">{cert.icon}</span>
+                      </div>
+                    </div>
+                    <div className="min-w-0">
+                      <div className="text-sm font-semibold text-foreground">{cert.name}</div>
+                      <div className="text-xs text-muted-foreground">
+                        {cert.date} · via {platforms[cert.platform].label}
+                      </div>
+                    </div>
+                  </a>
+                ))}
+              </div>
+
+              {/* Explicit close button — a second, clearly-labeled way to exit
+                  the window in addition to clicking outside it. */}
+              <DialogClose asChild>
+                <button
+                  type="button"
+                  className="mt-2 flex items-center justify-center gap-2 text-sm font-medium text-muted-foreground hover:text-foreground border border-border rounded-full px-4 py-2 transition-colors"
+                >
+                  <X className="w-4 h-4" />
+                  Close
+                </button>
+              </DialogClose>
+            </DialogContent>
+          </Dialog>
         ))}
 
         {/* "More on the way" card */}
