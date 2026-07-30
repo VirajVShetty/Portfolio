@@ -7,7 +7,7 @@ const experiences = [
     location: "Dallas, TX",
     date: "Oct 2025 — Present",
     bullets: [
-      "Governed the model development lifecycle, replacing email-based reviews with structured leadership alignment meetings — cutting turnaround time 75%.",
+      "Governed the model development lifecycle, replacing email-based reviews with structured leadership alignment meetings, cutting turnaround time 75%.",
       "Presented monthly and quarterly model performance reviews to internal leadership and bank partners, flagging underperforming models and driving strategy changes. Retired 2 underperforming models in a single review.",
       "Owned lifecycle management for 10–12 active models, including retirement of deprecated ones, with real-time status updates delivered within 24 hours.",
       "Coordinated third-party vendor validation and fair lending reviews to ensure compliance with SR 26-2 / OCC 11-12.",
@@ -21,7 +21,7 @@ const experiences = [
     bullets: [
       "Built XGBoost credit risk model with reject inference and Docker + CI/CD deployment — reducing projected delinquent loans by $1M.",
       "Automated PSI, AUC, KS, and lift tracking for 10 active models via parameterized Jupyter notebooks and a Snowflake-to-Power BI pipeline — reducing execution time 95%.",
-      "Designed ad-hoc analytical views for charge-off benchmarking, roll-rate analysis, and re-parameterization comparisons — reducing delinquent population 60%.",
+      "Designed ad-hoc analytical views for charge-off benchmarking, roll-rate analysis, and re-parameterization comparisons, reducing delinquent population 60%.",
       "Enhanced an automated underwriting lookup query using Claude AI to resolve fund/no-fund conflicts — cutting manual investigation time 85%.",
     ],
   },
@@ -31,8 +31,8 @@ const experiences = [
     location: "Dallas, TX",
     date: "Jun 2022 — Dec 2022",
     bullets: [
-      "Analyzed client feasibility requirements using JIRA and wrote Snowflake stored procedures — optimizing execution time and space by 20%.",
-      "Identified 5 key business metrics and ran hypothesis testing on patient data — improving treatment success rate by 20%.",
+      "Analyzed client feasibility requirements using JIRA and wrote Snowflake stored procedures, optimizing execution time and space by 20%.",
+      "Identified 5 key business metrics and ran hypothesis testing on patient data, improving treatment success rate by 20%.",
       "Used PySpark and Databricks to clean and ETL socio-economic data from the Census API — reducing null values 30%.",
     ],
   },

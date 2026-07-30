@@ -129,9 +129,9 @@ export default function Hero() {
               rel="noopener noreferrer"
               title={social.name}
               aria-label={social.name}
-              className="w-12 h-12 flex items-center justify-center rounded-full bg-card border border-border text-muted-foreground hover:text-foreground hover:border-primary/40 hover:-translate-y-0.5 hover:shadow-[0_10px_25px_-10px_rgba(79,70,229,0.35)] transition-all duration-200"
+              className="w-14 h-14 flex items-center justify-center rounded-full bg-card border border-border text-muted-foreground hover:text-foreground hover:border-primary/40 hover:-translate-y-0.5 hover:shadow-[0_10px_25px_-10px_rgba(79,70,229,0.35)] transition-all duration-200"
             >
-              <social.icon className="w-5 h-5" />
+              <social.icon className="w-6 h-6" />
             </a>
           ))}
         </motion.div>

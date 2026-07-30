@@ -64,11 +64,47 @@ const issuers: { name: string; icon: string; certs: Cert[] }[] = [
       // TODO: replace with your real Snowflake certification name, date, and
       // verify URL (and badge image, same as the Databricks ones above).
       {
-        name: "Snowflake Certification",
-        date: "TBD",
-        verifyUrl: "#",
+        name: "Snowflake Certification - Hands on Essentials",
+        date: "Accredited 2022",
+        verifyUrl: "https://www.credly.com/badges/20655581-e3ef-4203-9865-d984122410d4",
         platform: "credly",
         icon: "❄",
+      },
+    ],
+  },
+  {
+    name: "Tableau",
+    icon: "◆",
+    certs: [
+      // TODO: replace with your real Snowflake certification name, date, and
+      // verify URL (and badge image, same as the Databricks ones above).
+      {
+        name: "Tableau Consumer",
+        date: "Accredited 2020",
+        verifyUrl: "https://www.credly.com/badges/557180a9-0c84-4fc0-b945-63eec5d663f9",
+        platform: "credly",
+        icon: "❄",
+      },
+      {
+        name: "Tableau Author",
+        date: "Accredited 2020",
+        verifyUrl: "https://www.credly.com/badges/29da9bba-c8f8-45ae-b931-89d0852295a0",
+        platform: "credly",
+        icon: "◆",
+      },
+      {
+        name: "Tableau Analyst",
+        date: "Accredited 2021",
+        verifyUrl: "https://www.credly.com/badges/86cccdf5-249c-4765-a455-6a5014a1f61c",
+        platform: "credly",
+        icon: "❄",
+      },
+      {
+        name: "Tableau Data Scientist",
+        date: "Accredited 2020",
+        verifyUrl: "https://www.credly.com/badges/b491de61-e748-49ac-a5d2-0507d019a08f",
+        platform: "credly",
+        icon: "◆",
       },
     ],
   },
@@ -123,7 +159,7 @@ export default function Certifications() {
               </motion.button>
             </DialogTrigger>
 
-            <DialogContent>
+            <DialogContent showCloseButton={false}>
               <DialogHeader>
                 <DialogTitle>{issuer.name}</DialogTitle>
                 <DialogDescription>

@@ -9,7 +9,7 @@ export default function Projects() {
       description: "Built XGBoost credit risk model on 2.3M+ Lending Club loans. Applied fuzzy augmentation reject inference to incorporate 27M+ declined applications and correct accept-only sample bias. Tuned via stratified 5-fold CV → 0.709 AUC / 0.303 KS. Segment analysis across grade, DTI, and FICO bands.",
       tags: ["XGBoost", "Reject Inference", "Python", "Stratified CV"],
       // TODO: swap "#" for the real GitHub repo URL
-      githubUrl: "#"
+      githubUrl: "https://github.com/VirajVShetty/lending-club-charge-off-xgboost"
     },
     {
       title: "Fraud Detection Model",
@@ -17,7 +17,7 @@ export default function Projects() {
       description: "Cleaned and prepared 1M rows of transaction data. One-hot encoded categoricals, feature engineering. Implemented XGBoost with grid + random search hyperparameter tuning → 93% accuracy.",
       tags: ["XGBoost", "Feature Engineering", "GridSearchCV", "Python"],
       // TODO: swap "#" for the real GitHub repo URL
-      githubUrl: "#"
+      githubUrl: "https://github.com/Fraud-Transaction-Detection"
     }
   ];
 
