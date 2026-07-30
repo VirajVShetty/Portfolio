@@ -1,4 +1,16 @@
 import { motion } from "framer-motion";
+import {
+  SiLinkedin,
+  SiGithub,
+  SiHackerrank,
+  SiCodechef,
+  SiTableau,
+  SiKaggle,
+  SiCredly,
+} from "react-icons/si";
+import { FaXTwitter } from "react-icons/fa6";
+import { BadgeCheck } from "lucide-react";
+ 
 
 const chips = [
   "Model Risk Management",
@@ -6,6 +18,21 @@ const chips = [
   "Credit Risk Analyst",
   "XGBoost",
   "SR 26-2 / OCC 11-12",
+];
+
+const socials = [
+  { name: "LinkedIn", href: "https://www.linkedin.com/in/virajshetty47/", icon: SiLinkedin },
+  { name: "GitHub", href: "https://github.com/VirajVShetty", icon: SiGithub },
+  { name: "HackerRank", href: "https://www.hackerrank.com/viraj_shetty", icon: SiHackerrank },
+  { name: "CodeChef", href: "https://www.codechef.com/users/viraj713", icon: SiCodechef },
+  { name: "Tableau Public", href: "https://public.tableau.com/profile/viraj2833#!/", icon: SiTableau },
+  { name: "Kaggle", href: "https://www.kaggle.com/virajvshetty", icon: SiKaggle },
+  { name: "Twitter / X", href: "https://x.com/virajcodes", icon: FaXTwitter },
+  // TODO: swap "#" for your real Credly profile URL
+  { name: "Credly", href: "https://www.credly.com/users/viraj-shetty.d917c426/badges/credly", icon: SiCredly },
+  // TODO: swap "#" for your real Credential.net / Accredible profile URL
+  // (no dedicated brand icon exists in Simple Icons for this one, using a generic badge icon instead)
+  { name: "Credential.net", href: "https://www.credential.net/profile/virajshetty655837/wallet", icon: BadgeCheck },
 ];
 
 export default function Hero() {
@@ -86,6 +113,28 @@ export default function Hero() {
           >
             See featured project
           </a>
+        </motion.div>
+          
+                {/* Social links */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.65 }}
+          className="flex flex-wrap items-center justify-center gap-2.5 mb-16"
+        >
+          {socials.map((social) => (
+            
+              key={social.name}
+              href={social.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              title={social.name}
+              aria-label={social.name}
+              className="w-10 h-10 flex items-center justify-center rounded-full bg-card border border-border text-muted-foreground hover:text-foreground hover:border-primary/40 hover:-translate-y-0.5 hover:shadow-[0_10px_25px_-10px_rgba(79,70,229,0.35)] transition-all duration-200"
+            >
+              <social.icon className="w-4 h-4" />
+            </a>
+          ))}
         </motion.div>
 
         {/* Scroll cue */}
