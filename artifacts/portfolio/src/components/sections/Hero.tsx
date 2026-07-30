@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import {
   SiGithub,
   SiHackerrank,
-  SiCodechef,
+  SiLeetcode,
   SiKaggle,
   SiCredly,
 } from "react-icons/si";
@@ -20,7 +20,7 @@ const socials = [
   { name: "LinkedIn", href: "https://www.linkedin.com/in/virajshetty47/", icon: FaLinkedin },
   { name: "GitHub", href: "https://github.com/VirajVShetty", icon: SiGithub },
   { name: "HackerRank", href: "https://www.hackerrank.com/viraj_shetty", icon: SiHackerrank },
-  { name: "CodeChef", href: "https://www.codechef.com/users/viraj713", icon: SiCodechef },
+  { name: "LeetCode", href: "https://leetcode.com/u/virajvshetty/", icon: SiLeetcode },
   // No Tableau brand icon currently exists in Simple Icons (SiTableau isn't
   // exported by the installed react-icons version) — using a generic chart
   // icon as a stand-in.
@@ -129,9 +129,9 @@ export default function Hero() {
               rel="noopener noreferrer"
               title={social.name}
               aria-label={social.name}
-              className="w-10 h-10 flex items-center justify-center rounded-full bg-card border border-border text-muted-foreground hover:text-foreground hover:border-primary/40 hover:-translate-y-0.5 hover:shadow-[0_10px_25px_-10px_rgba(79,70,229,0.35)] transition-all duration-200"
+              className="w-12 h-12 flex items-center justify-center rounded-full bg-card border border-border text-muted-foreground hover:text-foreground hover:border-primary/40 hover:-translate-y-0.5 hover:shadow-[0_10px_25px_-10px_rgba(79,70,229,0.35)] transition-all duration-200"
             >
-              <social.icon className="w-4 h-4" />
+              <social.icon className="w-5 h-5" />
             </a>
           ))}
         </motion.div>
